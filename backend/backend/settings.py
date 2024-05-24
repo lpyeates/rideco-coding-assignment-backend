@@ -52,14 +52,8 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-# CORS_ALLOWED_ORIGINS = [
-#   'http://0.0.0.0:3000',
-#   'https://0.0.0.0:8000',
-# ]
-
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "DELETE"]
 
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '0.0.0.0']
 ALLOWED_HOSTS = ['*']
 
 ROOT_URLCONF = 'backend.urls'
