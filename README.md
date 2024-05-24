@@ -10,7 +10,7 @@ Docker can be downloaded [here](https://docs.docker.com/get-docker/) (https://do
 # Cloning the Repo
 To clone this repo using SSH run:
 ```
-git clone https://github.com/lpyeates/rideco-coding-assignment-frontend
+git clone git@github.com:lpyeates/rideco-coding-assignment-backend.git
 ```
 
 To clone this repo using HTTPS run:
@@ -36,7 +36,7 @@ docker-compose up --build
 ```
 
 If this is your first time running the app or you have made changes to the models, you need to run the migrations to create the required tables.
-To do so you:
+To do so, in a new terminal tab or window:
 
 1. Enter the docker container
 ```
