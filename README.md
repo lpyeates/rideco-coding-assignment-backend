@@ -7,24 +7,58 @@ The backend portion of the project is built in Django with a simple Postgres DB 
 
 Docker can be downloaded [here](https://docs.docker.com/get-docker/) (https://docs.docker.com/get-docker/)
 
-
-# Before running the app
-To have the docker containers for the front end and backend communicate to each other they need to share a network. To create this you need to create a 
-`.env` file in the same level as this README file. The `.env` should contain:
+# Cloning the Repo
+To clone this repo using SSH run:
 ```
-COMPOSE_PROJECT_NAME=rideco_assignment
+git clone https://github.com/lpyeates/rideco-coding-assignment-frontend
 ```
 
+To clone this repo using HTTPS run:
+```
+git clone https://github.com/lpyeates/rideco-coding-assignment-backend.git
+```
 
 # Running the Backend
 
-1. run `docker-compose build`
+1. run 
+```
+docker-compose build
+```
 
-2. run `docker-compose up`
+2. run 
+```
+docker-compose up
+```
 
-Alternatively you can simply run `docker-compose up --build`
+Alternatively you can simply run 
+```
+docker-compose up --build
+```
 
-To tear down the backend run `docker-compose down`
+If this is your first time running the app or you have made changes to the models, you need to run the migrations to create the required tables.
+To do so you:
+
+1. Enter the docker container
+```
+docker exec -it rideco_assignment-backend-1 /bin/sh
+```
+2. Make the migrations
+```
+python manage.py makemigrations
+```
+3. Run the migration
+```
+python manage.py migrate
+```
+
+For instructions to run the frontend of the app go to https://github.com/lpyeates/rideco-coding-assignment-frontend
+
+Once both the frontend and backend are built and running go to http://localhost:3000/ to access the app.
+
+To tear down the backend run
+```
+docker-compose down
+```
 
 
 # Running Tests
@@ -32,11 +66,20 @@ The backend has some simple test cases. These tests check the functionality of t
 
 To run the test:
 
-1. run `docker-compose up --build`
+1. run 
+```
+docker-compose up --build
+```
 
-2. run `docker exec -it rideco_assignment-backend-1 /bin/sh`
+2. run 
+```
+docker exec -it rideco_assignment-backend-1 /bin/sh
+```
 
-3. run `python manage.py test`
+3. run
+```
+python manage.py test
+```
 
 
 # Discussion and Future Improvements
