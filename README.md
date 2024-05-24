@@ -8,6 +8,14 @@ The backend portion of the project is built in Django with a simple Postgres DB 
 Docker can be downloaded [here](https://docs.docker.com/get-docker/) (https://docs.docker.com/get-docker/)
 
 
+# Before running the app
+To have the docker containers for the front end and backend communicate to each other they need to share a network. To create this you need to create a 
+`.env` file in the same level as this README file. The `.env` should contain:
+```
+COMPOSE_PROJECT_NAME=rideco_assignment
+```
+
+
 # Running the Backend
 
 1. run `docker-compose build`
